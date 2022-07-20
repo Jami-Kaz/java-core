@@ -1,20 +1,26 @@
 package practic._2_core;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Scanners {
-    static Scanner sc = new Scanner(System.in);
 
+    public static void main(String[] args) throws FileNotFoundException {
 
-    public static void main(String[] args) {
+        Scanner strScan = new Scanner("1 Jami super");
+        Scanner fileScan = new Scanner(new File("films.txt"));
+        Scanner consScan = new Scanner(System.in);
 
-        int i = (int) sc.nextDouble();   // возвращает следующее дробное число
-            int n = sc.nextInt();            // возвращает следующее целое число
+        System.out.println(fileScan.nextLine());
 
-        if (sc.hasNextInt()) {           // true если есть следующее целое число
+        int i = (int) consScan.nextDouble();   // возвращает следующее дробное число
+            int n = consScan.nextInt();            // возвращает следующее целое число
+
+        if (consScan.hasNextInt()) {           // true если есть следующее целое число
             System.out.println("число");
         }
-        else if (sc.hasNext()) {         // true если есть следующее слово до пробела
+        else if (consScan.hasNext()) {         // true если есть следующее слово до пробела
             System.out.println("строка");
         }
 
