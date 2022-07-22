@@ -6,20 +6,24 @@ import java.util.Scanner;
 public class _5_2_metod_array {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
+
         task2();
     }
-//На вход подаётся последовательность целых чисел. Создайте из этой последовательности массив
-// чисел, отсортированный по возрастанию, и выведите на печать.
-//Sample Input:
-//3 6 2 14 1
-//Sample Output:
-//[1, 2, 3, 6, 14]
+
+//На вход подаётся последовательность целых чисел. Создайте из этой последовательности массив чисел, отсортированный по возрастанию, и выведите на печать.
     static void task3() {
         String nums = sc.nextLine();
+        String[] numsArr = nums.split(" ");
+        int[] res = new int[numsArr.length];
 
+        for (int i = 0; i < res.length; i++) {
+            res[i] = Integer.parseInt(numsArr[i]);
+        }
+        Arrays.sort(res);
+        System.out.println(Arrays.toString(res));
     }
 //На вход подаётся натуральное число n, затем несколько целых чисел, разделённых пробелом,
-// а на следующей строке - натуральное число k.
+// а на следующей строке - число k.
 //Выведите k-е по счёту число по возрастанию. Если такого числа нет, выведите "Ошибка ввода".
 //Sample Input:
 //5
@@ -28,13 +32,23 @@ public class _5_2_metod_array {
 //Sample Output:
 //12
     static void task2() {
-        int[] nums = new int[5];
+        int n = sc.nextInt();
+        int[] numsArr = new int[n];
+        int nums = sc.nextInt();
 
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = sc.nextInt();
+        for (int i = 0; i < numsArr.length; i++) {
+            numsArr[i] = nums;
         }
 
-        Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        int k = sc.nextInt();
+        Arrays.sort(numsArr);
+
+        if (k > numsArr.length || k < 0) {
+                System.out.println("Ошибка ввода");
+            }
+            else {
+                System.out.println(numsArr[k - 1]);
+            }
     }
+
 }
