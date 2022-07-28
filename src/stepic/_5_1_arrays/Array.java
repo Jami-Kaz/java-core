@@ -1,9 +1,5 @@
-package stepic._5_1_massiv;
+package stepic._5_1_arrays;
 
-import stepic._4_3_base_math.Jami;
-import stepic._4_3_base_math.Tests;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array {
@@ -12,6 +8,7 @@ public class Array {
     public static void main(String[] args) {
         task15();
     }
+
 //На вход подаётся строка из элементов, разделённых запятой. Создайте из неё массив и выведите элементы массива каждый в отдельной строке.
     static void task15() {
         String lineElem = sc.nextLine();

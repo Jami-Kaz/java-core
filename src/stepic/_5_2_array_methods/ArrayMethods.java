@@ -1,16 +1,16 @@
-package stepic._5_1_massiv;
+package stepic._5_2_array_methods;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class _5_2_metod_array {
+public class ArrayMethods {
     static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         task2();
     }
 
-//На вход подаётся последовательность целых чисел. Создайте из этой последовательности массив чисел, отсортированный по возрастанию, и выведите на печать.
+    //На вход подаётся последовательность целых чисел. Создайте из этой последовательности массив чисел, отсортированный по возрастанию, и выведите на печать.
     static void task3() {
         String nums = sc.nextLine();
         String[] numsArr = nums.split(" ");
@@ -22,33 +22,32 @@ public class _5_2_metod_array {
         Arrays.sort(res);
         System.out.println(Arrays.toString(res));
     }
-//На вход подаётся натуральное число n, затем несколько целых чисел, разделённых пробелом,
+
+    //На вход подаётся натуральное число n, затем несколько целых чисел, разделённых пробелом,
 // а на следующей строке - число k.
 //Выведите k-е по счёту число по возрастанию. Если такого числа нет, выведите "Ошибка ввода".
 //Sample Input:
-//5
-//3 12 1 22 17
-//3
+// 5
+// 3 12 1 22 17
+// 3
 //Sample Output:
 //12
     static void task2() {
         int n = sc.nextInt();
         int[] numsArr = new int[n];
-        int nums = sc.nextInt();
 
         for (int i = 0; i < numsArr.length; i++) {
-            numsArr[i] = nums;
+            numsArr[i] = sc.nextInt();
         }
 
         int k = sc.nextInt();
         Arrays.sort(numsArr);
 
         if (k > numsArr.length || k < 0) {
-                System.out.println("Ошибка ввода");
-            }
-            else {
-                System.out.println(numsArr[k - 1]);
-            }
+            System.out.println("Ошибка ввода");
+        } else {
+            System.out.println(numsArr[k - 1]);
+        }
     }
 
 }
