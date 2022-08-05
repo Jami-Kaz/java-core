@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Conditions {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        String result = task_7(6);
+        String result = multOfSeven(6);
         System.out.println(result);
     }
 
     // На вход подаётся целое число. Выведите "YES", если оно нацело делится на 7, но не делится на 5, иначе -  "NO".
-    static String task_7(int n) {
+    static String multOfSevenNotFive(int n) {
 //        int n = sc.nextInt();
 //        System.out.println((n % 7) == 0 && (n % 5) != 0 ? "YES" : "NO");
         return (n % 7) == 0 && (n % 5) != 0 ? "YES" : "NO";
     }
 
     // На вход подаётся целое число. Выведите "YES", если оно нацело делится на 7, и "NO" - если нет.
-    static String task_6(int num) {
+    static String multOfSeven(int num) {
 //        System.out.println((sc.nextInt() % 7) == 0 ? "YES" : "NO");
         return (num % 7) == 0 ? "YES" : "NO";
     }
@@ -30,7 +30,7 @@ public class Conditions {
     }
 
     // На вход подаются два числа -  масса откушенного куска уха и норматив. Выведите "Бой продолжается!" или "Холифилд - чемпион!" в зависимости от выполнения условия.
-    static String task_4(double yxo, double norm) {
+    static String box(double yxo, double norm) {
 //        System.out.print(
 //                (sc.nextDouble() < sc.nextDouble()) ? "Бой продолжается!" : "Холифилд - чемпион!");
         return (yxo < norm) ? "Бой продолжается!" : "Холифилд - чемпион!";

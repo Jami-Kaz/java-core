@@ -7,12 +7,12 @@ public class ArrayMethods {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        task2();
+      int[] result = sortSequence("1 5 8 2 0");
+        System.out.println(Arrays.toString(result));
     }
 
     //На вход подаётся последовательность целых чисел. Создайте из этой последовательности массив чисел, отсортированный по возрастанию, и выведите на печать.
-    static void task3() {
-        String nums = sc.nextLine();
+    static int[] sortSequence(String nums) {
         String[] numsArr = nums.split(" ");
         int[] res = new int[numsArr.length];
 
@@ -20,7 +20,7 @@ public class ArrayMethods {
             res[i] = Integer.parseInt(numsArr[i]);
         }
         Arrays.sort(res);
-        System.out.println(Arrays.toString(res));
+        return res;
     }
 
     //На вход подаётся натуральное число n, затем несколько целых чисел, разделённых пробелом,
@@ -32,22 +32,16 @@ public class ArrayMethods {
 // 3
 //Sample Output:
 //12
-    static void task2() {
-        int n = sc.nextInt();
+    static int kCountSorted(int n, int k, int... seq) {
         int[] numsArr = new int[n];
-
         for (int i = 0; i < numsArr.length; i++) {
-            numsArr[i] = sc.nextInt();
+            numsArr[i] = seq[i];
         }
-
-        int k = sc.nextInt();
         Arrays.sort(numsArr);
-
         if (k > numsArr.length || k < 0) {
-            System.out.println("Ошибка ввода");
+            return -1;
         } else {
-            System.out.println(numsArr[k - 1]);
+            return numsArr[k - 1];
         }
     }
-
 }
