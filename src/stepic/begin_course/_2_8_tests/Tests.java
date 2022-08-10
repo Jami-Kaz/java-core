@@ -1,4 +1,4 @@
-package stepic._2_8_tests;
+package stepic.begin_course._2_8_tests;
 
 import java.util.Scanner;
 

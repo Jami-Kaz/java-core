@@ -1,4 +1,4 @@
-package stepic._3_2_boolean_constructions;
+package stepic.begin_course._3_2_boolean_constructions;
 
 import java.util.Scanner;
 

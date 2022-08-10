@@ -1,4 +1,4 @@
-package stepic._5_3_array_tasks;
+package stepic.begin_course._5_3_array_tasks;
 
 import java.util.Arrays;
 import java.util.Scanner;

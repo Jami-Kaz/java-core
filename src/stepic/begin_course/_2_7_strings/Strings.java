@@ -1,4 +1,4 @@
-package stepic._2_7_strings;
+package stepic.begin_course._2_7_strings;
 
 import java.util.Scanner;
 

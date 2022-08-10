@@ -1,4 +1,4 @@
-package stepic._3_3_inner_conditions;
+package stepic.begin_course._3_3_inner_conditions;
 
 import java.util.Scanner;
 

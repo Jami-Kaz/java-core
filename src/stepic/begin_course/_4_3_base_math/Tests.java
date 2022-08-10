@@ -1,4 +1,4 @@
-package stepic._4_3_base_math;
+package stepic.begin_course._4_3_base_math;
 
 import java.math.BigInteger;
 import java.util.Scanner;

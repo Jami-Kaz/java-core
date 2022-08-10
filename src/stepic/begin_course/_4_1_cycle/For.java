@@ -1,4 +1,4 @@
-package stepic._4_1_cycle;
+package stepic.begin_course._4_1_cycle;
 
 import java.util.Scanner;
 
