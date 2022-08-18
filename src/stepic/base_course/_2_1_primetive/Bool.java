@@ -1,8 +1,5 @@
 package stepic.base_course._2_1_primetive;
 
-
-import java.util.Arrays;
-
 public class Bool {
 
     public static void main(String[] args) {
@@ -22,7 +19,8 @@ public class Bool {
         }
         return res == 2;
     }
-//В Григорианском календаре год является високосным в двух случаях: либо он кратен 4, но при этом
+
+    //В Григорианском календаре год является високосным в двух случаях: либо он кратен 4, но при этом
 // не кратен 100, либо кратен 400.
 //Реализуйте метод, вычисляющий количество високосных лет с начала нашей эры (первого года) до
 // заданного года включительно. В программу всегда подается положительный номер года.
@@ -30,7 +28,6 @@ public class Bool {
 // использующую только арифметические операторы.
 //Sample Input 1:   1         Sample Input 2:   4      Sample Input 3:  100
 //Sample Output 1:  0         Sample Output 2:  1      Sample Output 3:  24
-
     public static int leapYearCount(int year) {
         int res = 0;
         for (int i = 1; i <= year; i++) {
@@ -41,12 +38,11 @@ public class Bool {
         return res;
     }
 
-//Реализуйте метод, возвращающий ответ на вопрос: правда ли, что a + b = c?
+    //Реализуйте метод, возвращающий ответ на вопрос: правда ли, что a + b = c?
 //Допустимая погрешность – 0.0001 (1E-4)
 //Можно использовать класс Math и его методы. Класс Math доступен всегда, импортировать его не надо.
 //В качестве примера написано заведомо неправильное выражение. Исправьте его.
 //    Sample Input:   0.1 0.2 0.3       Sample Output:    true
-
     public static boolean doubleExpression(double a, double b, double c) {
         return Math.abs((a + b) - c) < 0.0001;
     }
@@ -63,16 +59,8 @@ public class Bool {
                 res.append('0');
             }
         }
-
-        res.setCharAt(bitIndex-1, res.charAt(bitIndex-1) == '1' ? '0' : '1');
+        res.setCharAt(bitIndex - 1, res.charAt(bitIndex - 1) == '1' ? '0' : '1');
         return Integer.parseUnsignedInt(res.reverse().toString(), 2);
     }
 
-    class Bit {
-        private int order;
-        private boolean value;
-    }
-    class BitRepository {
-
-    }
 }
