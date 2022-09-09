@@ -10,7 +10,8 @@ import java.util.stream.IntStream;
 public class ConditionAndCycle {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(mergeArrays(new int[]{0, 2, 2}, new int[]{1, 3})));
+        System.out.println(Arrays.toString(
+                mergeArrays(new int[]{0, 2, 2}, new int[]{1, 3})));
 
     }
 
@@ -51,24 +52,19 @@ public class ConditionAndCycle {
      * - Если на вход подаются массивы {0, 2, 2} и {1, 3},
      * то на выходе должен получиться массив {0, 1, 2, 2, 3}
      */
+    public static int[] mergeArrays(int[] first, int[] second) {
+        int sum = first.length + second.length;
+        int[] result = new int[sum];
+        int iF = 0;
+        int iS = 0;
 
-    public static int[] mergeArrays(int[] arr1, int[] arr2) {
-        int[] result = new int[arr1.length + arr2.length];
-        int iArr1 = 0;
-        int iArr2 = 0;
         for (int i = 0; i < result.length; i++) {
-            if (iArr1 >= arr1.length) {
-                result[i] = arr2[iArr2];
-                iArr2 += 1;
-            } else if (iArr2 >= arr2.length) {
-                result[i] = arr1[iArr1];
-                iArr1 += 1;
-            } else if (arr1[iArr1] < arr2[iArr2]) {
-                result[i] = arr1[iArr1];
-                iArr1 += 1;
+            if (iS == second.length || iF != first.length && first[iF] < second[iS]) {
+                result[i] = first[iF];
+                iF += 1;
             } else {
-                result[i] = arr2[iArr2];
-                iArr2 += 1;
+                result[i] = second[iS];
+                iS += 1;
             }
         }
 
