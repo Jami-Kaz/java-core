@@ -1,17 +1,19 @@
 package stepic.base_course._2_4_condition_and_cycle;
 
 import java.math.BigInteger;
-import java.time.Instant;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class ConditionAndCycle {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(
-                mergeArrays(new int[]{0, 2, 2}, new int[]{1, 3})));
+        System.out.println((printTextPerRole(
+                new String[]{"Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"},
+                new String[]{"Городничий: Я пригласил вас.",
+                        "Аммос Федорович: Как ревизор?",
+                        "Артемий Филиппович: Как ревизор?",
+                        "Городничий: Ревизор из Петербурга.",
+                        "Аммос Федорович: Вот те на!",
+                        "Артемий Филиппович: Вот не было заботы, так подай!",
+                        "Лука Лукич: Господи боже! еще и с секретным предписаньем!"})));
 
     }
 
@@ -51,6 +53,8 @@ public class ConditionAndCycle {
      * совести :)
      * - Если на вход подаются массивы {0, 2, 2} и {1, 3},
      * то на выходе должен получиться массив {0, 1, 2, 2, 3}
+     *
+     * @param first
      */
     public static int[] mergeArrays(int[] first, int[] second) {
         int sum = first.length + second.length;
@@ -98,7 +102,7 @@ public class ConditionAndCycle {
      * -Sample Input:
      * roles:     ["Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"]
      * textLines:
-     * -       ["Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
+     * -       ["Городничий: Я пригласил вас, господа.",
      * -        "Аммос Федорович: Как ревизор?",
      * -        "Артемий Филиппович: Как ревизор?",
      * -        "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
@@ -108,20 +112,59 @@ public class ConditionAndCycle {
      * -
      * -Sample Output:
      * -       "Городничий:
-     * -        1) Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.
+     * -        1) Я пригласил вас, господа.
      * -        4) Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.
+     * -
      * -        Аммос Федорович:
      * -        2) Как ревизор?
      * -        5) Вот те на!
+     * -
      * -        Артемий Филиппович:
      * -        3) Как ревизор?
      * -        6) Вот не было заботы, так подай!
+     * -
      * -        Лука Лукич:
      * -        7) Господи боже! еще и с секретным предписаньем!"
      */
 
-    private String printTextPerRole(String[] roles, String[] textLines) {
-        return "";
+    public static String printTextPerRole(String[] roles, String[] textLines) {
+//        StringBuilder result = new StringBuilder();
+//
+//        for (String name : roles) {
+//            result.append(name).append(":").append("\n");
+//            for (int j = 0; j < textLines.length; j++) {
+//                if (textLines[j].startsWith(name + ":")) {
+//                    result.append(j + 1)
+//                            .append(")")
+//                            .append(textLines[j].replaceFirst(name + ":", ""))
+//                            .append("\n");
+//                }
+//            }
+//            result.append("\n");
+//        }
+//
+//        return result.toString();
+
+        String result = "";
+
+        for (String name : roles) {
+            result += name + ":" + "\n";
+
+            for (int iT = 0; iT < textLines.length; iT++) {
+
+                if (textLines[iT].startsWith(name + ":")) {
+                    result += (iT + 1) + ")"
+                            + textLines[iT].replaceFirst(name + ":", "")
+                            + "\n";
+                }
+            }
+            result += "\n";
+
+        }
+
+        return result;
+
+
     }
 
 }
